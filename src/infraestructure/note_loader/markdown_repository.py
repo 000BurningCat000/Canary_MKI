@@ -10,8 +10,8 @@ class NoteUnitOfWorkImpl(NoteCommandUsecaseUnitOfWork):
         self.backup_data = None
         super().__init__()
     def begin(self):
-        ...
-
+        self.noteRepository.read()
+        
     def commit(self):
         ...
     def rollback(self):
