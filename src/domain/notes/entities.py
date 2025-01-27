@@ -1,6 +1,6 @@
 from . import dataclass
 from .value_objects import Question_maked
-from domain.IA.entities import IA
+
 @dataclass
 class Note:
     note_id:str
@@ -20,3 +20,10 @@ class Note:
             return False
         return True
      
+@dataclass
+class Config:
+    hash_file: str
+    old_hashes: list[str]
+    file_ref:str
+    def add_old_hash(self, new_hash: str):
+        self.old_hashes.append(new_hash)
